@@ -1,0 +1,13 @@
+form.auth {
+  display: grid;
+  gap: 15px;
+  color: #fff;
+  background: #202021;
+  margin-left: 1px;
+  border-radius: 5px;
+  padding: 5%;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  z-index: 1;
+  place-self: center;
+}
