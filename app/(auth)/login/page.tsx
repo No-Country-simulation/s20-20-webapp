@@ -21,7 +21,7 @@ export default function Login() {
       <p>¿OLVIDASTE TU CONTRASEÑA?</p>
       <menu>
         <li><AuthBtn>INICIAR SESIÓN</AuthBtn></li>
-        <li><AuthBtn mod='inherit' href='#'>REGISTRATE</AuthBtn></li>
+        <li><AuthBtn mod='inherit' href='/register'>REGISTRATE</AuthBtn></li>
       </menu>
     </AuthForm>
   </>
