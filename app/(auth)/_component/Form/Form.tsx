@@ -6,16 +6,18 @@ export default function AuthForm({
   children,
   title,
   text = '',
+  className = '',
 }: {
   action: NonNullable<string | ((formData: FormData) => void | Promise<void>) | undefined>;
   children: React.ReactNode;
   title: string;
   text?: string;
+  className?: string;
 }) {
   const heading = <h1>{title}</h1>
 
   return <>
-    <Form action={action} className='auth'>
+    <Form action={action} className={`auth${className && ' ' + className}`}>
       {!!text ? 
         <hgroup>
           {heading}

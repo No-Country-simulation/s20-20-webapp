@@ -10,4 +10,13 @@ form.auth {
   grid-row: 1 / 2;
   z-index: 1;
   place-self: center;
+  height: 80%;
+
+  h1 {
+    font-size: 32px;
+
+    & + p {
+      font-size: 20px;
+    }
+  }
 }
