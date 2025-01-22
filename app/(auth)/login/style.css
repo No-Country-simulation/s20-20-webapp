@@ -1,19 +1,5 @@
 form.login {
   grid-template-rows: repeat(4,auto) 1fr;
-
-  label {
-    display: grid;
-    gap: 12px;
-    grid-template-rows: 24px 45px;
-
-    input {
-      background: #292C2F;
-      border-radius: 7px;
-      border-color: transparent;
-      padding-inline-start: 18px;
-      color: white;
-    }
-  }
   
   .password-wrapper {
     display: flex;
