@@ -1,3 +1,4 @@
 .dni-cuit {
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: repeat(3, auto) 1fr;
+  width: 70%;
 }

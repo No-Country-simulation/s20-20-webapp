@@ -34,4 +34,15 @@ form.auth {
       color: white;
     }
   }
+
+  menu {
+    display: grid;
+    align-content: end;
+    list-style: none;
+    gap: 15px;
+  }
+
+  p {
+    font-size: 11px;
+  }
 }
