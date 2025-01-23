@@ -1,3 +1,7 @@
 form.login {
   grid-template-rows: repeat(4,auto) 1fr;
+
+  > a {
+    font-size: 11px;
+  }
 }
