@@ -7,7 +7,7 @@ export default function PasswordRecover() {
     <Image src='/coins-drop.svg' alt='throwed coins'  width={600} height={1200} />
     <AuthForm title="Recuperar contraseña" action={'function'} >
       <label>
-        <span>Correo electronico</span>
+        <span>Correo electrónico</span>
         <input type="email" name="email" placeholder="ejemplo@gmail.com" />
       </label>
       <menu>
