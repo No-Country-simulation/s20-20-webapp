@@ -1,4 +1,4 @@
-.dni-cuit {
+.register {
   grid-template-rows: repeat(3, auto) 1fr;
   width: 70%;
 }
