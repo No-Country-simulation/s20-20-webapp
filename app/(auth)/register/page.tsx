@@ -3,15 +3,13 @@ import AuthForm from "../_component/Form/Form";
 import AuthBtn from "../_component/AuthBtn/AuthBtn";
 import './style.css'
 import AuthPassword from "../_component/AuthPassword/AuthPassword";
+import AuthEmail from "../_component/AuthEmail/AuthEmail";
 
 export default function Register() {
   return<>
     <Image src='/Floating-Credit-Cards-Mockup.svg' alt='Floating credit cards' width={600} height={1200} />
     <AuthForm action={'function'} title="Bienvenido" text="Ingresa tú correo electrónico" className="register">
-      <label>
-        <span>Correo electrónico</span>
-        <input type="email" name="email" placeholder="ejemplo@gmail.com" />
-      </label>
+      <AuthEmail />
       <AuthPassword leyend="Contraseña" />
       <AuthPassword leyend="Repetir Contraseña" name="confirm" />
       <menu>
