@@ -6,7 +6,7 @@ import AuthPassword from "../_component/AuthPassword/AuthPassword";
 
 export default function Register() {
   return<>
-    <Image src='/Floating-Credit-Cards-Mockup.png' alt='Floating credit cards' width={600} height={1200} />
+    <Image src='/Floating-Credit-Cards-Mockup.svg' alt='Floating credit cards' width={600} height={1200} />
     <AuthForm action={'function'} title="Bienvenido" text="Ingresa tú correo electrónico" className="register">
       <label>
         <span>Correo electrónico</span>
