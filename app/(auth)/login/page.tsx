@@ -2,6 +2,7 @@ import Image from 'next/image'
 import AuthForm from '../_component/Form/Form'
 import './style.css'
 import AuthBtn from '../_component/AuthBtn/AuthBtn'
+import AuthPassword from '../_component/AuthPassword/AuthPassword'
 
 export default function Login() {
   return <>
@@ -11,17 +12,11 @@ export default function Login() {
         <span>Correo Electrónico</span>
         <input type="email" name="email" placeholder='ejemplo@gmail.com' />
       </label>
-      <label>
-        <span>contraseña</span>
-        <span className='password-wrapper'>
-          <input type="password" name='password' placeholder={'* '.repeat(8)} />
-          <button type='button' ><img src='/blind-eye.svg' alt='blind eye' /></button>
-        </span>
-      </label>
+      <AuthPassword leyend='contraseña' />
       <p>¿OLVIDASTE TU CONTRASEÑA?</p>
       <menu>
-        <li><AuthBtn>INICIAR SESIÓN</AuthBtn></li>
-        <li><AuthBtn mod='inherit' href='/register'>REGISTRATE</AuthBtn></li>
+        <li><AuthBtn>Iniciar Sesión</AuthBtn></li>
+        <li><AuthBtn mod='inherit' href='/register'>Registrate</AuthBtn></li>
       </menu>
     </AuthForm>
   </>
