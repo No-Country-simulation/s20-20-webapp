@@ -15,13 +15,15 @@
     display: grid;
     gap: 15px;
     list-style: none;
+    justify-items: start;
   }
 
   a {
     display: flex;
     gap: 8px;
+    align-items: center;
 
-    > :first-child {
+    > svg {
       width: 25px;
       aspect-ratio: 1;
     }
