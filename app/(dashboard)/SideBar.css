@@ -1,0 +1,42 @@
+.sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 79px;
+  padding: 82px 25px;
+  border-bottom-right-radius: 50px;
+  background-color: white;
+  
+  body:has(> &) {
+    grid-template-columns: max-content 1fr;
+    background-color: #1D2125;
+  }
+
+  ul {
+    display: grid;
+    gap: 15px;
+    list-style: none;
+    justify-items: start;
+  }
+
+  a {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    > svg {
+      width: 25px;
+      aspect-ratio: 1;
+    }
+  }
+
+  hr {
+    margin-bottom: 49px;
+    opacity: .5;
+  }
+}
+
+.profile {
+  display: grid;
+  place-items: center;
+  gap: 12px;
+}

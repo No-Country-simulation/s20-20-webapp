@@ -13,44 +13,62 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model user {
   id String @id @default(uuid())
   email String @unique
   password String
   createAt DateTime @default(now())
-  client Client @relation(fields: [clientId], references: [id])
+  client client @relation(fields: [clientId], references: [id])
   clientId Int @unique
+  cards card[]
 }
 
-model Client {
+model client {
   id Int @id @default(autoincrement())
   name String
   lastName String
   phone String @unique
   birthday DateTime
   address String
-  cards Card[]
-  user User?
+  image String
+  user user?
 }
 
-model Card {
+model card {
   id String @id @default(uuid())
+  user user @relation(fields: [userId], references: [id])
+  userId String
+  transactions transaction[]
+  cardInfo cardInfo @relation(fields: [cardInfoId], references: [id])
+  cardInfoId Int @unique
+}
+
+model cardInfo {
+  id Int @id @default(autoincrement())
   accountNumber String @unique
-  client Client @relation(fields: [clientId], references: [id])
-  clientId Int
   cardType String
   expirationDate DateTime
   issuerBank String
   balance Float
-  transactions Transaction[]
+  card card?
 }
 
-model Transaction {
+model transaction {
   id String @id @default(uuid())
   amount Float
-  description String
+  description String?
   status Boolean 
-  card Card @relation(fields: [cardId], references: [id])
+  card card @relation(fields: [cardId], references: [id])
   cardId String
   createAt DateTime @default(now())
+  targetAccount String?
+  legalPerson legalPerson? @relation(fields: [legalPersonId], references: [id])
+  legalPersonId Int
+}
+
+model legalPerson {
+  id Int @id @default(autoincrement())
+  companyName String
+  companyLogo String
+  transaction transaction[]
 }
