@@ -1,0 +1,27 @@
+.primary,
+.gradient,
+.secundary {
+  padding: 10px 15px;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: var(--white-color-btn);
+  color: var(--dark-text-color);
+  border: none;
+}
+
+.secundary {
+  background-color: transparent;
+  border: 1px solid var(--white-color-btn);
+  color: var(--white-color-btn);
+}
+
+.gradient {
+  background: linear-gradient(225deg, #18c8ff 14.89%, #933ffe 85.85%);
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+}

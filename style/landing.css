@@ -1,0 +1,15 @@
+.landing {
+}
+
+.section-padding {
+  padding: 80px;
+}
+
+.heading-h2 {
+  font-size: Max(2.5vw, 25px);
+  text-align: center;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 100px;
+}

@@ -1,0 +1,104 @@
+.virtualWallet {
+  height: 120vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: linear-gradient(
+    to bottom left,
+    transparent 0,
+    transparent 50%,
+    rgba(123, 35, 108, 0.65) 100%
+  );
+
+  .virtualWallet__title {
+    margin-bottom: 100px;
+  }
+
+  .virtualWallet__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    gap: 25px;
+
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .virtualWallet__box:nth-child(1) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+
+  .virtualWallet__box:nth-child(2) {
+    grid-column: 2/-1;
+    grid-row: 1/2;
+  }
+
+  .virtualWallet__box:nth-child(3) {
+    grid-column: 1/-1;
+    grid-row: 2/-1;
+  }
+
+  .virtualWallet__box {
+    box-shadow: 0 0 15px rgba(187, 155, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+  }
+
+  .virtualWallet__content {
+    width: 70%;
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .virtualWallet__heading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .virtualWallet__img {
+    width: 30%;
+    height: 100%;
+
+    position: relative;
+    overflow: hidden;
+  }
+
+  .virtualWallet__img-woman {
+    object-fit: cover;
+    width: 180px;
+    height: 180px;
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+  }
+
+  .virtualWallet__img-qr {
+    object-fit: cover;
+    width: 160px;
+    height: 160px;
+    display: block;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .virtualWallet__img-card {
+    object-fit: contain;
+    width: 160px;
+    height: 160px;
+    display: block;
+
+    position: absolute;
+    bottom: -20px;
+    right: -10px;
+  }
+}

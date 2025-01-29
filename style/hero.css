@@ -1,0 +1,32 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+
+  position: relative;
+
+  background: linear-gradient(
+    to top right,
+    transparent 0,
+    transparent 50%,
+    rgba(123, 35, 108, 0.65) 100%
+  );
+
+  .hero__title {
+    font-size: Max(4vw, 3rem);
+    margin-bottom: 20px;
+  }
+
+  .hero__paragraph {
+    font-size: 17px;
+    margin-bottom: 30px;
+  }
+
+  .spline {
+    position: absolute;
+    right: -30%;
+    top: 0;
+  }
+}
