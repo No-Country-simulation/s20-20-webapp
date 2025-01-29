@@ -1,19 +1,19 @@
 import './SideBar.css'
 import {menu, wallet, transaction, analysis, commerce, configuration, session} from './_lib/svgConst'
 
-type Links = [React.ReactNode, string, string][];
+type Links = [React.ReactNode, string, string | undefined][];
 
 const navLinks: Links = [
   [menu, 'Menú', 'menu'],
-  [wallet, 'Billetera', ''],
-  [transaction, 'Transacciones', ''],
-  [analysis, 'Análisis de ingresos', ''],
-  [commerce, 'Comercio', ''],
+  [wallet, 'Billetera', undefined],
+  [transaction, 'Transacciones', undefined],
+  [analysis, 'Análisis de ingresos', undefined],
+  [commerce, 'Comercio', undefined],
 ];
 
 const optLinks: Links = [
-  [configuration, 'Configuración', ''],
-  [session, 'Cerrar sesión', ''],
+  [configuration, 'Configuración', undefined],
+  [session, 'Cerrar sesión', undefined],
 ];
 
 const RenderLinks = ({ links }: { links: Links }) => <ul>
