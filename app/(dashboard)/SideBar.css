@@ -5,6 +5,7 @@
   padding: 82px 25px;
   border-bottom-right-radius: 50px;
   background-color: white;
+  color: black;
   
   body:has(> &) {
     grid-template-columns: max-content 1fr;
