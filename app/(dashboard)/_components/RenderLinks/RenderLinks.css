@@ -1,0 +1,36 @@
+.nav-list {
+  display: grid;
+  gap: 15px;
+  list-style: none;
+  
+  a {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    border-radius: 7px;
+    height: 68px;
+    padding: 21px;
+  
+    > svg {
+      width: 25px;
+      aspect-ratio: 1;
+    }
+    
+    &.active {
+      background-color: #292C2F;
+      color: white;
+      
+      :where([d^="M13.5002"], [d^="M7 7H0V0L2.79289"]) {
+        fill: white;
+      }
+  
+      :where([clip-path="url(#clip0_125_217)"],
+      [clip-path="url(#clip0_125_209)"],
+      [clip-path="url(#clip0_125_225)"],
+      [clip-path="url(#clip0_125_247)"],
+      [clip-path="url(#clip0_125_256)"]) * {
+        stroke: white;
+      }
+    }
+  }
+}

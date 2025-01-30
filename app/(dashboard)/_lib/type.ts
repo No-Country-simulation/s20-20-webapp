@@ -1,0 +1,1 @@
+export type Links = [React.ReactNode, string, string | undefined][];
