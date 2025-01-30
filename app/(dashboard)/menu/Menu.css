@@ -1,0 +1,14 @@
+.menu {
+  display: grid;
+  grid-template: 
+    "balance balance activity" 281px
+    "nav nav activity"  82px
+    "statics add-card activity" 371px
+    "statics market activity" 35% / 33% 33% 34%;
+  gap: 22px;
+  padding: 70px 25px 0;
+
+  .balance {
+    grid-area: balance;
+  }
+}
