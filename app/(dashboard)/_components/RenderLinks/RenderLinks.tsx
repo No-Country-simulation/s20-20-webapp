@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { Links } from "../../_lib/type";
 import './RenderLinks.css'
+import NavList from "../LinkList/LinkList";
 
 export default function RenderLinks({
   links,
@@ -11,12 +12,7 @@ export default function RenderLinks({
 }) {
   const path = usePathname();
 
-  return <ul className="nav-list">
-    {links.map(([svg, text, href = '#']) => <li key={text}>
-      <a href={href} className={path === href ? 'active' : ''}>
-        {svg}
-        <p>{text}</p>
-      </a>
-    </li>)}
-</ul>
+  return <>
+    <NavList className="nav-list" links={links} path={path} />
+  </>
 }
