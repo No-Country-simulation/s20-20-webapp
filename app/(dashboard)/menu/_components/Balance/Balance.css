@@ -1,0 +1,129 @@
+.balance {
+  display: grid;
+  gap: 33px;
+  grid-template:
+    "title title card" 25%
+    "balance balance card" auto
+    "performance expenses card" 1fr / 1fr 1fr 50%;
+  padding: 18px 21px;
+  color: white;
+  background-color: #292C2F;
+  border-radius: 20px;
+  
+  h1 {
+    grid-area: title;
+    font-size: 20px;
+    align-self: end;
+  }
+
+  > p {
+    grid-area: balance;
+    font-size: 46px;
+    font-weight: 700;
+  }
+
+  .performance {
+    grid-area: performance;
+  }
+
+  .expenses {
+    grid-area: expenses;
+  }
+
+  .performance, .expenses {
+    display: grid;
+    grid-template: 
+      "img money" 15px
+      "img text" 15px / 30px 1fr;
+    gap: 6px;
+
+    img {
+      grid-area: img;
+      width: 100%;
+      aspect-ratio: 1;
+    }
+
+    h3 {
+      font-size: 10px;
+    }
+  }
+
+  .card-slot {
+    grid-area: card;
+    display: grid;
+    grid-template-rows: 8% 12% 1fr;
+    width: 90%;
+    justify-items: center;
+    
+    &::after, &::before {
+      display: block;
+      content: '';
+      border-radius: 15px 15px 0 0;
+    }
+    
+    &::before {
+      width: 75%;
+      background-image: linear-gradient(to right, #61DE70, #0DA6C2);
+    }
+    
+    &::after {
+      width: 85%;
+      background-image: linear-gradient(to right, #5E33D7, #9327F0);
+    }
+  }
+  
+  .card {
+    background-image: linear-gradient(to right, #0DA6C2, #0E39C6);
+    border-radius: 25px;
+    grid-row: 3;
+    justify-self: stretch;
+    display: grid;
+    gap: 7px;
+    grid-template: 
+      "chip . ." 1fr
+      "num num num" 17%
+      ". date svg" auto
+      "owner owner svg" 17% / 25% 1fr 28%;
+    color: #DDD9D6;
+    padding: 17px;
+  }
+
+  .chip {
+    grid-area: chip;
+    display: flex;
+    gap: 5px;
+    place-self: end start;
+  }
+
+  .num {
+    grid-area: num;
+    display: flex;
+    gap: 14px;
+    font-size: 20px;
+    opacity: .9;
+  }
+
+  .date {
+    grid-area: date;
+    display: grid;
+    grid-template: repeat(2, 8px) / 30px 1fr;
+    font-size: 7px;
+    place-items: center start;
+
+    > :last-child {
+      grid-row: 1 / 3;
+      grid-column: 2;
+      font-size: 15px;
+    }
+  }
+
+  .owner {
+    grid-area: owner;
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .institution {
+    grid-area: svg;
+  }
+}
