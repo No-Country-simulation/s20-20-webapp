@@ -5,9 +5,8 @@ import { getToken } from "next-auth/jwt";
 import { Token } from "./app/(api)/types/token";
 
 const httpResponse = new HttpResponse();
-const secret = process.env.NEXTAUTH_SECRET || "your-secret-key"; // Asegúrate de tener una clave secreta segura
+const secret = process.env.NEXTAUTH_SECRET || "your-secret-key"; //Se cambia luego, es de prueba por ahora
 
-// This function can be marked `async` if using `await` inside
 export async function middleware(req: NextRequest) {
   const token = (await getToken({ req, secret })) as Token;
   if (!token) {
