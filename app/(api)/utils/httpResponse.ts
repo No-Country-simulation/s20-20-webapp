@@ -10,45 +10,75 @@ export enum HttpStatus {
 
 export class HttpResponse {
   Ok(data?: unknown) {
-    return NextResponse.json({
-      status: HttpStatus.OK,
-      statusMsg: "Success",
-      data: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.OK,
+        statusMsg: "Success",
+        data: data,
+      },
+      {
+        status: HttpStatus.OK,
+      }
+    );
   }
   BadRequest(data?: unknown) {
-    return NextResponse.json({
-      status: HttpStatus.Bad_Request,
-      statusMsg: "Bad request",
-      error: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.Bad_Request,
+        statusMsg: "Bad request",
+        error: data,
+      },
+      {
+        status: HttpStatus.Bad_Request,
+      }
+    );
   }
   NotFound(data?: unknown): Response {
-    return NextResponse.json({
-      status: HttpStatus.NOT_FOUND,
-      statusMsg: "Not found",
-      error: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.NOT_FOUND,
+        statusMsg: "Not found",
+        error: data,
+      },
+      {
+        status: HttpStatus.NOT_FOUND,
+      }
+    );
   }
   Unauthorized(data?: unknown): Response {
-    return NextResponse.json({
-      status: HttpStatus.UNAUTHORIZED,
-      statusMsg: "Unauthorized",
-      error: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.UNAUTHORIZED,
+        statusMsg: "Unauthorized",
+        error: data,
+      },
+      {
+        status: HttpStatus.UNAUTHORIZED,
+      }
+    );
   }
   Forbidden(data?: unknown): Response {
-    return NextResponse.json({
-      status: HttpStatus.FORBIDDEN,
-      statusMsg: "Forbidden",
-      error: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.FORBIDDEN,
+        statusMsg: "Forbidden",
+        error: data,
+      },
+      {
+        status: HttpStatus.FORBIDDEN,
+      }
+    );
   }
   InternalServerError(data?: unknown): Response {
-    return NextResponse.json({
-      status: HttpStatus.INTERNAL_SERVER_ERROR,
-      statusMsg: "Internal Server Error",
-      error: data,
-    });
+    return NextResponse.json(
+      {
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+        statusMsg: "Internal Server Error",
+        error: data,
+      },
+      {
+        status: HttpStatus.INTERNAL_SERVER_ERROR,
+      }
+    );
   }
 }

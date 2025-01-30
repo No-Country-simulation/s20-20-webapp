@@ -46,4 +46,18 @@ export class TransactionService {
       return this.httpResponse.InternalServerError(error);
     }
   }
+
+  async listTransactionByUserCard(cardId: string) {
+    try {
+      const transactions =
+        await this.transactionRepository.listTransactionsByUserCard(cardId);
+      if (!transactions || transactions.length <= 0)
+        return this.httpResponse.NotFound(
+          "No se encontraron transacciones realizadas con esta tarjeta"
+        );
+      return this.httpResponse.Ok(transactions);
+    } catch (error) {
+      return this.httpResponse.InternalServerError(error);
+    }
+  }
 }
