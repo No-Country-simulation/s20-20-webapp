@@ -1,0 +1,14 @@
+.menu-nav {
+  display: flex;
+  justify-content: space-between;
+  
+  a {
+    display: grid;
+    place-items: center;
+    background-color: #262B30;
+    padding: 25px 60px;
+    border-radius: 15px;
+    border: 1px solid #979797;
+    font-size: 12px;
+  }
+}

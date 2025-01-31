@@ -7,8 +7,13 @@
     "statics market activity" 35% / 33% 33% 34%;
   gap: 22px;
   padding: 70px 25px 0;
+  color: white;
 
   .balance {
     grid-area: balance;
+  }
+
+  > nav {
+    grid-area: nav;
   }
 }
