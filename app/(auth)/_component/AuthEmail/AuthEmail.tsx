@@ -2,7 +2,7 @@ export default function AuthEmail() {
   return <>
     <label>
       <span>Correo Electrónico</span>
-      <input type="email" name="email" placeholder='ejemplo@gmail.com' />
+      <input type="email" name="email" placeholder='ejemplo@gmail.com' required />
     </label>
   </>
 }
