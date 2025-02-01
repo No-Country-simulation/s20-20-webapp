@@ -1,5 +1,6 @@
 import Balance from "./_components/Balance/Balance";
 import MenuNav from "./_components/MenuNav/MenuNav";
+import Statics from "./_components/Statics/Statics";
 import './Menu.css'
 
 export default function Menu() {
@@ -9,6 +10,7 @@ export default function Menu() {
       <nav>
         <MenuNav />
       </nav>
+      <Statics />
     </main>
   </>
 }

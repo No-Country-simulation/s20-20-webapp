@@ -2,9 +2,9 @@
   display: grid;
   grid-template: 
     "balance balance activity" 281px
-    "nav nav activity"  82px
+    "nav nav activity"  88px
     "statics add-card activity" 371px
-    "statics market activity" 35% / 33% 33% 34%;
+    "statics market activity" 1fr / 33% 33% 34%;
   gap: 22px;
   padding: 70px 25px 0;
   color: white;
@@ -15,5 +15,9 @@
 
   > nav {
     grid-area: nav;
+  }
+
+  .statics {
+    grid-area: statics;
   }
 }
