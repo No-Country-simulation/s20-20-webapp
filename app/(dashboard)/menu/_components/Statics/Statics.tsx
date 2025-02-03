@@ -1,5 +1,8 @@
+'use client'
+
 import RadioGroup from '../RadioGroup/RadioGroup'
 import './Statics.css'
+import useChart from '@/app/(dashboard)/_customHook/Chart';
 
 const periods = [
   'Semana',
@@ -13,6 +16,8 @@ const flow = [
 ];
 
 export default function Statics() {
+  const chartRef = useChart();
+
   return <>
     <section className="statics" >
       <h2>Estadísticas</h2>
@@ -25,6 +30,7 @@ export default function Statics() {
         <nav className='flow'>
           <RadioGroup name="flow" fields={flow} />
         </nav>
+        <div ref={chartRef} />
       </div>
     </section>
   </>
