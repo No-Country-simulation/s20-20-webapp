@@ -1,3 +1,5 @@
+'use client'
+
 import Image from "next/image";
 import AuthForm from "../_component/Form/Form";
 import AuthBtn from "../_component/AuthBtn/AuthBtn";
@@ -5,8 +7,8 @@ import AuthEmail from "../_component/AuthEmail/AuthEmail";
 
 export default function PasswordRecover() {
   return <>
-    <Image src='/coins-drop.svg' alt='throwed coins'  width={600} height={1200} />
-    <AuthForm title="Recuperar contraseña" action={'function'} >
+    <Image className="dropped-coins" src='/dropped-coins.svg' alt='throwed coins'  width={400} height={800} />
+    <AuthForm title="Recuperar contraseña" onSubmit={(form) => {}}>
       <AuthEmail />
       <menu>
         <li><AuthBtn>Enviar</AuthBtn></li>
