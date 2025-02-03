@@ -1,5 +1,3 @@
-import { signIn, SignInResponse } from "next-auth/react";
-
 type Register = Record<'email' | 'password', FormDataEntryValue>
 
 const postOpt = {

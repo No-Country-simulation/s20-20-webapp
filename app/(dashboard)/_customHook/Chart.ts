@@ -1,6 +1,10 @@
 import { AreaSeries, ColorType, createChart } from "lightweight-charts";
 import { useEffect, useRef } from "react";
 
+type Colors = Partial<Record<'backgroundColor' | 'lineColor' | 'textColor' | 'areaTopColor' | 'areaBottomColor' | 'gridColor' , string>>;
+type Data = { time: string, value: number }[];
+type Chart = Partial<{ data: Data, colors: Colors }>;
+
 const initialData = [
   { time: '2018-12-22', value: 32.51 },
   { time: '2018-12-23', value: 31.11 },
@@ -14,7 +18,7 @@ const initialData = [
   { time: '2018-12-31', value: 22.67 },
 ];
 
-export default function useChart(props: any = {}) {
+export default function useChart(props: Chart = {}) {
   const chartRef = useRef<HTMLDivElement>(null);
 
   const {
@@ -62,7 +66,7 @@ export default function useChart(props: any = {}) {
 
         chart.remove();
     };
-  }, [data, backgroundColor, lineColor, textColor, areaTopColor, areaBottomColor])
+  }, [data, backgroundColor, lineColor, textColor, areaTopColor, areaBottomColor, gridColor])
 
   return chartRef
 }
