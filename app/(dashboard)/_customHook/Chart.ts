@@ -37,16 +37,18 @@ export default function useChart(props: any = {}) {
     };
 
     const chart = createChart(theChart, {
-        layout: {
-            background: { type: ColorType.Solid, color: backgroundColor },
-            textColor,
-        },
-        grid: {
-          vertLines: {color: gridColor},
-          horzLines: {color: gridColor},
-        },
-        width: theChart.clientWidth,
-        height: 300,
+      layout: {
+          background: { type: ColorType.Solid, color: backgroundColor },
+          textColor,
+      },
+      grid: {
+        vertLines: {color: gridColor},
+        horzLines: {color: gridColor},
+      },
+      width: theChart.clientWidth,
+      height: 300,
+      rightPriceScale: { visible: false },
+      timeScale: { visible: false },
     });
     chart.timeScale().fitContent();
 
