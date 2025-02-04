@@ -16,7 +16,7 @@ export default function Hero() {
 
       <Spline
         className="spline"
-        scene="https://prod.spline.design/1ackIzLJ3pBFKSC3/scene.splinecode"
+        scene="https://prod.spline.design/LxiqLQAl7KuMlgRA/scene.splinecode"
       />
     </section>
   );

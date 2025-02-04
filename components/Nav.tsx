@@ -13,19 +13,19 @@ export default function Nav() {
       <nav className="nav">
         <ul className="list">
           <li className="item">
-            <Link href="/servicios" className="link">
+            <Link href="#servicios" className="link">
               Servicios
             </Link>
           </li>
 
           <li className="item">
-            <Link href="/cripto" className="link">
+            <Link href="#cripto" className="link">
               Cripto
             </Link>
           </li>
 
           <li className="item">
-            <Link href="/ofrecemos" className="link">
+            <Link href="#ofrecemos" className="link">
               Lo que ofrecemos
             </Link>
           </li>
