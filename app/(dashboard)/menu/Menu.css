@@ -20,4 +20,12 @@
   .statics {
     grid-area: statics;
   }
+
+  .add-card {
+    grid-area: add-card;
+  }
+
+  .market {
+    grid-area: market;
+  }
 }
