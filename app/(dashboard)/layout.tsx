@@ -1,8 +1,11 @@
-import Image from 'next/image';
+'use client'
+
 import './SideBar.css'
 import RenderLinks from './_components/RenderLinks/RenderLinks';
 import {menu, wallet, transaction, analysis, commerce, configuration, session} from './_lib/svgConst'
 import { Links } from './_lib/type';
+import { SessionProvider } from 'next-auth/react';
+import User from './_components/User/User';
 
 const navLinks: Links = [
   [menu, 'Menú', '/menu'],
@@ -22,12 +25,12 @@ export default function SideBar({
 }: {
   children: React.ReactNode;
 }) {
+  
   return <>
     <header className="sidebar">
-      <section className='profile'>
-        <Image src="/default-profile-image.png" alt="imagen de perfil" width={100} height={100} />
-        <h2>Mateo Gonzaléz</h2>
-      </section>
+      <SessionProvider >
+        <User />
+      </SessionProvider>
       <nav>
         <RenderLinks links={navLinks} />
       </nav>
