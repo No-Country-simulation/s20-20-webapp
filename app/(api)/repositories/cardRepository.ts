@@ -68,4 +68,14 @@ export class CardRepository {
     }));
     return result;
   }
+
+  async saveCard(data: ICard) {
+    const newCard = {
+      userId: data.userId,
+      cardInfoId: data.cardInfoId,
+    };
+    return await prisma.card.create({
+      data: newCard,
+    });
+  }
 }

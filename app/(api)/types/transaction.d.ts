@@ -5,6 +5,7 @@ export interface ITransactionRequest {
   cardId: string;
   targetAccount: string;
   legalPersonId: number;
+  withdraw: boolean;
 }
 
 export interface ITransaction {

@@ -1,7 +1,7 @@
 import { UserRepository } from "../repositories/userRepository";
 import bcrypt from "bcrypt";
 import { HttpResponse } from "../utils/httpResponse";
-import { IUserRequest } from "../types/user";
+import { IClient, IUserRequest } from "../types/user";
 import { prisma } from "@/app/libs/prisma";
 import { ClientRepository } from "../repositories/clientRepository";
 
@@ -27,10 +27,16 @@ export class AuthService {
         return null; // Contraseña incorrecta
       }
 
+      const userData = await this.clientRepository.getClientByClientId(
+        userFound.clientId
+      );
       // Devuelve el objeto esperado por NextAuth
       return {
         id: userFound.clientId.toString(),
         email: userFound.email,
+        name: userData?.name,
+        lastName: userData?.lastName,
+        image: userData?.image,
       };
     } catch (error) {
       console.error("Error en AuthService login:", error);
@@ -48,10 +54,18 @@ export class AuthService {
           "Ya existe un usuario con este correo"
         );
       const hashedPassword = await bcrypt.hash(data.user.password, 10);
+      if (!data.client) throw new Error("Error inesperado");
       await prisma.$transaction(async () => {
+        const clientData: IClient = {
+          name: data.client?.name || "",
+          lastName: data.client?.lastName || "",
+          phone: data.client?.phone || "",
+          birthday: data.client?.birthday || new Date(),
+          address: data.client?.address || "",
+          image: data.client?.image || "",
+        };
         const client = await this.clientRepository.saveClient({
-          ...data.client,
-          birthday: new Date(data.client.birthday), // Asegúrate de que sea una fecha válida
+          ...clientData,
         });
         const newUser = {
           email: data.user.email,

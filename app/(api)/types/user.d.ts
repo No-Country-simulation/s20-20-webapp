@@ -1,6 +1,6 @@
 export interface IUserRequest {
   user: IUser;
-  client: IClient;
+  client?: IClient;
 }
 
 export interface IUser {

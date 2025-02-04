@@ -7,4 +7,10 @@ export class ClientRepository {
       data: data,
     });
   }
+
+  async getClientByClientId(clientId: number) {
+    return await prisma.client.findUnique({
+      where: { id: clientId },
+    });
+  }
 }

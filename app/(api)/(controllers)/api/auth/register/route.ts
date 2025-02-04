@@ -11,12 +11,12 @@ export const POST = async (req: NextRequest) => {
       password: data.password,
     },
     client: {
-      name: data.name,
-      lastName: data.lastName,
-      phone: data.phone,
-      birthday: data.birthday,
-      address: data.address,
-      image: data.image,
+      name: "",
+      lastName: "",
+      phone: "",
+      birthday: new Date(Date.now()),
+      address: "",
+      image: "",
     },
   };
   return await authService.register(user);
