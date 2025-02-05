@@ -27,12 +27,12 @@ export class AuthService {
         return null; // Contraseña incorrecta
       }
 
-      const userData = await this.clientRepository.getClientByClientId(
+      const userData = await this.clientRepository.getClientById(
         userFound.clientId
       );
       // Devuelve el objeto esperado por NextAuth
       return {
-        id: userFound.clientId.toString(),
+        id: userFound.id,
         email: userFound.email,
         name: userData?.name,
         lastName: userData?.lastName,
