@@ -1,0 +1,7 @@
+.widget {
+  background: #2D3133;
+  border-radius: 15px;
+  display: grid;
+  color: white;
+  padding: 20px;
+}
