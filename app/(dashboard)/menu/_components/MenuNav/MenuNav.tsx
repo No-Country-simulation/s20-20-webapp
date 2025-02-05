@@ -10,8 +10,16 @@ const links: Links = [
   [CVU, 'Tu CVU', undefined],
 ];
 
-export default function MenuNav() {
+export default function MenuNav({
+  onlyFinancials = false,
+  className = '',
+  mod = '',
+}: {
+  onlyFinancials?: boolean;
+  className?: string;
+  mod?: '' | 'green';
+}) {
   return <>
-    <NavList className="menu-nav" links={links} />
+    <NavList className={`menu-nav${className && ' ' + className}${mod && ' ' + mod}`} links={links.slice(0, onlyFinancials ? 3 : 4)} />
   </>
 }
