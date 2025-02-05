@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Widget from "../../_components/Widget/Widget";
 
 import './Transactions.css'
+import MenuNav from "../_components/MenuNav/MenuNav";
 
 export default function Transactions() {
   const [avatars, setAvatars] = useState([])
@@ -30,6 +31,9 @@ export default function Transactions() {
           </label>)}
         </div>
       </Widget>
+      <nav>
+        <MenuNav onlyFinancials mod='green' />
+      </nav>
     </main>
   </>
 }
