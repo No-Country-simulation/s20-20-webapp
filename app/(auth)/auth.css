@@ -8,6 +8,11 @@ main.auth {
     height: 80%;
     z-index: 2;
     align-self: center;
+
+    &.dropped-coins {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &::after {

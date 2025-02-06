@@ -3,8 +3,9 @@ export interface ITransactionRequest {
   description: string?;
   status: boolean;
   cardId: string;
-  targetAccount: string;
+  targetAccount?: string;
   legalPersonId: number;
+  withdraw: boolean;
 }
 
 export interface ITransaction {

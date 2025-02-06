@@ -1,0 +1,45 @@
+.market {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+
+  .title {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
+    color: white;
+  }
+  
+  .table th {
+    font-weight: bold;
+  }
+  
+  .row {
+    border-bottom: 1px solid #333;
+  }
+  
+  .symbol {
+    color: #777;
+    margin-right: 5px;
+  }
+  
+  .positive {
+    color: #96ff00;
+  }
+  
+  .negative {
+    color: red;
+  }
+}

@@ -1,5 +1,5 @@
 export interface ICard {
-  cardId: string;
+  cardId?: string;
   userId: string;
   cardInfoId: number;
   accountNumber: string;

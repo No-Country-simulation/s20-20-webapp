@@ -1,9 +1,31 @@
+import { prisma } from "@/app/libs/prisma";
 import { CardRepository } from "../repositories/cardRepository";
+import { ICard } from "../types/card";
 import { HttpResponse } from "../utils/httpResponse";
+import { CardInfoRepository } from "../repositories/cardInfoRepository";
 
 export class CardService {
   private readonly cardRepository = new CardRepository();
+  private readonly cardInfoRepository = new CardInfoRepository();
   private readonly httpResponse = new HttpResponse();
+
+  async saveCard(data: ICard) {
+    try {
+      await prisma.$transaction(async () => {
+        const cardInfo = await this.cardInfoRepository.saveCardInfo(data);
+        const card = {
+          ...data,
+          cardInfoId: cardInfo.id,
+        };
+        await this.cardRepository.saveCard(card);
+      });
+      return this.httpResponse.Ok("Se guardó correctamente la tarjeta");
+    } catch (error) {
+      //   console.error("Error en AuthService login:", error);
+      //   return null; // Error interno
+      return this.httpResponse.InternalServerError(error);
+    }
+  }
 
   async getCardById(cardId: string) {
     try {

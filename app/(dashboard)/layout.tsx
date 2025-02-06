@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import './SideBar.css'
 import RenderLinks from './_components/RenderLinks/RenderLinks';
 import {menu, wallet, transaction, analysis, commerce, configuration, session} from './_lib/svgConst'
@@ -24,7 +25,7 @@ export default function SideBar({
   return <>
     <header className="sidebar">
       <section className='profile'>
-        <img src="/default-profile-image.png" alt="imagen de perfil" />
+        <Image src="/default-profile-image.png" alt="imagen de perfil" width={100} height={100} />
         <h2>Mateo Gonzaléz</h2>
       </section>
       <nav>

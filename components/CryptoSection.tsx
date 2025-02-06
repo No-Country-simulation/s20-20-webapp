@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function CryptoSection() {
   return (
     <>
-      <section className="crypto crypto-big-height section-padding">
+      <section className="crypto crypto-big-height section-padding" id="cripto">
         <h2 className="crypto__title heading-h2">
           Compra, vende y almacena tus criptos de forma segura
         </h2>
@@ -79,7 +79,7 @@ export default function CryptoSection() {
             <Image src="/wallet.svg" alt="" fill />
           </div>
 
-          <div className="crypto__content">
+          <div className="crypto__content" id="ofrecemos">
             <div>
               <h3 className="crypto__heading-h3">Seguro y Confiable</h3>
               <p className="crypto__paragraph">

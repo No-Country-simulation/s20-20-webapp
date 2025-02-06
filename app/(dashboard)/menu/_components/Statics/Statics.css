@@ -1,0 +1,91 @@
+.statics {
+  background-color: #292C2F;
+  padding-top: 32px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-rows: 45px 44px 35px 35px auto;
+  overflow: hidden;
+
+  h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .option-tab {
+    display: flex;
+    justify-content: space-around;
+    background-color: #1F2123;
+    border-radius: 15px;
+    border: 1px solid #383C41;
+
+    label {
+      padding: 12px 26px;
+      transition-property: background-color, box-shadow, border-radius;
+      transition: 250ms ease-in-out;
+    }
+    
+    label:has(:checked) {
+      border-radius: 15px;
+      background-color: #FF00C8;
+      box-shadow: 0 0 5px 2px #ff00c8e3;
+    }
+  }
+
+  > :where(h3, p) {
+    place-self: end center;
+  }
+
+  h3 {
+    opacity: .7;
+    font-weight: 400;
+  }
+
+  > p {
+    font-size: 20px;
+  }
+
+  .chart {
+    background: #262B30;
+    padding-top: 10px;
+    border-radius: 15px 15px 0 0;
+    border-width: 1px 1px 0;
+    border-style: solid;
+    border-color: #383C41;
+  }
+
+  .flow {
+    display: flex;
+
+    span {
+      display: block;
+      text-align: center;
+      margin-bottom: 8px;
+      opacity: .7;
+      transition: opacity 250ms ease-in-out;
+    }
+
+    label {
+      flex: 1 1 50%;
+    }
+    
+    label::after {
+      display: block;
+      content: '';
+      background-color: #394148;
+      height: 1px;
+      transition-property: background-color, box-shadow;
+      transition: 250ms ease-in-out;
+    }
+
+    label:has(:checked) {
+      &::after {
+        background-color: #FF00C8;
+        box-shadow: 0 0 5px 2px #ff00c8e3;
+      }
+
+      span {
+        opacity: initial;
+      }
+    }
+  }
+}

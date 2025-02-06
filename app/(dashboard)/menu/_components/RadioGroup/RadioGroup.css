@@ -1,0 +1,6 @@
+.radio {
+  input {
+    appearance: none;
+    display: none;
+  }
+}

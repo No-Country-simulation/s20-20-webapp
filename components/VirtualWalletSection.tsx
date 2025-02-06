@@ -3,8 +3,8 @@ import "../style/VirtualWalletSection.css";
 
 export default function VirtualWalletSection() {
   return (
-    <section className="virtualWallet section-padding ">
-      <h2 className="virtualWallet__title heading-h2">
+    <section className="virtualWallet section-padding " id="servicios">
+      <h2 className="virtualWallet__title heading-h2" >
         Simplifique su vida financiera con nuestra potente billetera virtual
       </h2>
 

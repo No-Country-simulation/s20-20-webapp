@@ -12,31 +12,35 @@ export class TransactionService {
 
   async saveTransaction(data: ITransactionRequest) {
     try {
-      const targetCard = await this.cardRepository.findByAccountNumber(
-        data.targetAccount
-      );
-      if (!targetCard)
-        return this.httpResponse.NotFound("La cuenta destino no existe.");
-      const originCard = await this.cardRepository.findById(data.cardId);
+      const [targetCard, originCard] = await Promise.all([
+        data.withdraw
+          ? null
+          : this.cardRepository.findByAccountNumber(data.targetAccount || ""),
+        this.cardRepository.findById(data.cardId),
+      ]);
+
       if (!originCard)
-        return this.httpResponse.BadRequest("La cuenta de origen no existe");
+        return this.httpResponse.BadRequest("La cuenta de origen no existe.");
+      if (!targetCard && !data.withdraw)
+        return this.httpResponse.NotFound("La cuenta destino no existe.");
       if (!validateBalanceOnTheCard(data.amount, originCard))
         return this.httpResponse.BadRequest(
-          "No hay saldo suficiente para realizar esta operación"
+          "No hay saldo suficiente para realizar esta operación."
         );
+
       await prisma.$transaction(async () => {
         await this.transactionRepository.saveTransaction(data);
-        const newBalanceOrigin = originCard.balance - data.amount;
         await this.cardRepository.updateBalance(
           originCard.cardInfoId,
-          newBalanceOrigin
+          originCard.balance - data.amount
         );
-        const newBalanceTarget = targetCard.balance + data.amount;
-        targetCard.balance = newBalanceTarget;
-        await this.cardRepository.updateBalance(
-          targetCard.cardInfoId,
-          newBalanceTarget
-        );
+
+        if (targetCard && !data.withdraw) {
+          await this.cardRepository.updateBalance(
+            targetCard.cardInfoId,
+            targetCard.balance + data.amount
+          );
+        }
       });
 
       return this.httpResponse.Ok("Se realizó correctamente la transferencia.");

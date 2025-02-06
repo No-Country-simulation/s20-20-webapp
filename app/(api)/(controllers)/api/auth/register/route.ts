@@ -1,6 +1,23 @@
-import { NextRequest, NextResponse } from "next/server";
-export const POST = async (req: NextRequest): Promise<NextResponse<string>> => {
+import { AuthService } from "@/app/(api)/services/authService";
+import { IUserRequest } from "@/app/(api)/types/user";
+import { NextRequest } from "next/server";
+
+const authService = new AuthService();
+export const POST = async (req: NextRequest) => {
   const data = await req.json();
-  console.log(data);
-  return NextResponse.json("registranding..");
+  const user: IUserRequest = {
+    user: {
+      email: data.email,
+      password: data.password,
+    },
+    client: {
+      name: "",
+      lastName: "",
+      phone: "",
+      birthday: new Date(Date.now()),
+      address: "",
+      image: "",
+    },
+  };
+  return await authService.register(user);
 };
