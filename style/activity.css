@@ -1,0 +1,68 @@
+.activity {
+  .activity__days {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /*   border-bottom: 1px solid var(--white-color-btn); */
+  }
+
+  .activity__days h2 {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .activity__days p {
+    font-size: 15px;
+  }
+
+  .activity__container p:not(:last-child) {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .activity__list {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .activity__item {
+    width: 90%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+    border-radius: 100px;
+    padding: 10px;
+
+    background-color: var(--dark-text-color);
+  }
+
+  .activity__item img {
+    border-radius: 100%;
+  }
+
+  .activity__texts h3 {
+    font-size: 16px;
+  }
+
+  .activity__texts p {
+    font-size: 13px;
+  }
+
+  .activity__amount {
+    font-size: 13px;
+    margin-left: auto;
+    margin-right: 5px;
+    border: 1px solid var(--white-color-btn);
+    padding: 8px;
+    border-radius: 100px;
+  }
+}
