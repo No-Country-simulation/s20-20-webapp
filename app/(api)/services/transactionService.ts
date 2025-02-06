@@ -15,7 +15,7 @@ export class TransactionService {
       const [targetCard, originCard] = await Promise.all([
         data.withdraw
           ? null
-          : this.cardRepository.findByAccountNumber(data.targetAccount),
+          : this.cardRepository.findByAccountNumber(data.targetAccount || ""),
         this.cardRepository.findById(data.cardId),
       ]);
 

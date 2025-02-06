@@ -17,3 +17,8 @@ export interface IClient {
   address: string;
   image: string;
 }
+
+export interface IUserUpdate {
+  userId: string;
+  client: IClient;
+}

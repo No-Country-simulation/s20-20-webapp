@@ -8,9 +8,16 @@ export class ClientRepository {
     });
   }
 
-  async getClientByClientId(clientId: number) {
+  async getClientById(clientId: number) {
     return await prisma.client.findUnique({
       where: { id: clientId },
+    });
+  }
+
+  async updateClient(clientId: number, data: Partial<IClient>) {
+    return await prisma.client.update({
+      where: { id: clientId },
+      data: data,
     });
   }
 }
