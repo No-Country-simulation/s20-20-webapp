@@ -5,7 +5,7 @@ import './MenuNav.css'
 
 const links: Links = [
   [input, 'Ingresar', undefined],
-  [transfer, 'Transferir', undefined],
+  [transfer, 'Transferir', 'menu/transactions'],
   [output, 'Retirar', undefined],
   [CVU, 'Tu CVU', undefined],
 ];
