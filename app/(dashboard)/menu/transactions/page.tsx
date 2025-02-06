@@ -5,6 +5,7 @@ import Widget from "../../_components/Widget/Widget";
 
 import './Transactions.css'
 import MenuNav from "../_components/MenuNav/MenuNav";
+import Form from "next/form";
 
 export default function Transactions() {
   const [avatars, setAvatars] = useState([])
@@ -34,6 +35,27 @@ export default function Transactions() {
       <nav>
         <MenuNav onlyFinancials mod='green' />
       </nav>
+      <Widget className="finantial-request" >
+        <hgroup>
+          <h2>Transferencia</h2>
+          <p>Seleccionar Alias o CVU</p>
+        </hgroup>
+        <Form action={''}>
+          <label >
+            <span>Alias</span>
+            <input type="text" name="alias" />
+          </label>
+          <label >
+            <span>CVU</span>
+            <input type="text" name="CVU" />
+          </label>
+          <label >
+            <span>Monto</span>
+            <input type="number" name="money" />
+          </label>
+          <button>Transferir</button>
+        </Form>
+      </Widget>
     </main>
   </>
 }

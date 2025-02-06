@@ -59,3 +59,46 @@
     width: 100%;
   }
 }
+
+.finantial-request {
+  grid-area: transfer;
+  grid-template-rows: 25% auto;
+
+  hgroup > p {
+    margin-top: 15px;
+  }
+
+  form {
+    display: grid;
+    width: 80%;
+    grid-template-rows: repeat(3, 100px) 1fr;
+    gap: 15px;
+    justify-self: center;
+
+    label {
+      display: grid;
+      grid-template-rows: 30px 67px;
+    }
+
+    input {
+      background-color: #414547;
+      box-shadow: inset 0 3px 10px #00000049;
+      color: white;
+      padding-inline: 10px;
+      border-radius: 15px;
+    }
+
+    button {
+      color: white;
+      background-color: #232728;
+      border-radius: 30px;
+      padding: 25px 30%;
+      place-self: center;
+      cursor: pointer;
+    }
+    
+    button, input {
+      border-style: none;
+    }
+  }
+}
